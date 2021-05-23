@@ -8,7 +8,7 @@ export const userAPI = {
 
     getUserInfo(username){
         return instance.get(`user/${username}`)
-            .then(response => response)
+            .then(response => response.data)
     }
 
 }

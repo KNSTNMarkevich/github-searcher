@@ -1,4 +1,4 @@
-import {getUserInfo} from '../api/api.js'
+import {userAPI} from '../api/api.js'
 
 const SET_USER_NAME = 'SET_USER_NAME'
 
@@ -22,6 +22,11 @@ const usersReducer = (state = initialState, action) => {
 
 export const SetUser = (username) => {
     return {type: SET_USER_NAME, username}
+}
+
+export const getUserProfileInfo = (username) => async (dispatch) => {
+    const data = await userAPI.getUserInfo(username)
+    dispatch(SetUser(data));
 }
 
 
