@@ -7,20 +7,7 @@
 
 .appWrapperContent{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   max-width: 1366px;
   min-height: 662px;
 
-}
-
-.contentText{
-  margin-top: 47px;
-  width: 210px;
-  font-family: Inter, sans-serif;
-  font-size: 22px;
-  line-height: 140%;
-  text-align: center;
-  color: #808080;
 }

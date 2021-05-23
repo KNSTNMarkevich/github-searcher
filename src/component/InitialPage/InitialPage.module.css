@@ -1,0 +1,18 @@
+
+.initialWrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contentText{
+    margin-top: 47px;
+    width: 210px;
+    font-family: Inter, sans-serif;
+    font-size: 22px;
+    line-height: 140%;
+    text-align: center;
+    color: #808080;
+}
