@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import style from './App.module.css';
-import Header from './component/Header/Header'
 import {BrowserRouter, Route} from "react-router-dom"
 import Users from "./component/Users/Users";
 import InitialPage from "./component/InitialPage/InitialPage";
 import store from "./redux/store"
 import {Provider} from "react-redux";
+import Header from "./component/Header/HeaderContainer";
+window.store = store;
 
 function App() {
     return (
@@ -14,10 +15,10 @@ function App() {
                 <div className={style.appWrapper}>
                     <Header/>
                     <div className={style.appWrapperContent}>
-                        <Route path='/users/'
+                        <Route path='/users/:user?'
                                render={() => <Users/>}
                         />
-                        <Route path='/init/'
+                        <Route path='/init'
                                render={() => <InitialPage/>}
                         />
 

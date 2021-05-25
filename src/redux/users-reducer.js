@@ -1,18 +1,22 @@
 import {userAPI} from '../api/api.js'
 
-const SET_USER_NAME = 'SET_USER_NAME'
+const SET_USER = 'SET_USER'
 
 
 let initialState ={
-    username: null
+    user: {
+        login: '',
+        followers: '',
+        following: ''
+    }
 }
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_USER_NAME: {
+        case SET_USER: {
             return {
                 ...state,
-                username: action.username
+                user: action.user
             }
         }
         default:
@@ -20,12 +24,12 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 
-export const SetUser = (username) => {
-    return {type: SET_USER_NAME, username}
+export const SetUser = (user) => {
+    return {type: SET_USER, user}
 }
 
-export const getUserProfileInfo = (username) => async (dispatch) => {
-    const data = await userAPI.getUserInfo(username)
+export const getUserProfileInfo = (user) => async (dispatch) => {
+    const data = await userAPI.getUserInfo(user)
     dispatch(SetUser(data));
 }
 

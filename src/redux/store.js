@@ -4,7 +4,7 @@ import reposReducer from "./repos-reducer";
 import usersReducer from "./users-reducer";
 
 let reducers = combineReducers({
-    user: usersReducer,
+    users: usersReducer,
 })
 
 const store = createStore(reducers, applyMiddleware(thunk));
