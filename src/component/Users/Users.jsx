@@ -22,7 +22,8 @@ function Users(props) {
 
 const mapStateToProps = (state) => ({
     user: state.users.user,
-    searchValue: state.search.searchValue
+    searchValue: state.search.searchValue,
+    repos: state.repos.repos
 })
 
 export default compose(

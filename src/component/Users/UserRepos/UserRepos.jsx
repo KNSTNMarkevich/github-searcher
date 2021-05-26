@@ -1,13 +1,30 @@
 import Repository from "./Repository/Repository";
+import {useEffect, useState} from "react";
 
 
 function UserRepos(props) {
+    const [repos, setRepos] = useState(props.repos)
+
+    useEffect(() => {
+
+        setRepos(props.repos)
+    },[props.repos]);
     return (
+
+
+
         <div>
-            <div>
-                <Repository {...props}/>
+              <div>
+                Repositories({props.repos.length})
             </div>
-            powel nuxui repos
+                   {
+                props.repos.map(r =>
+                    <Repository key={r.id}
+                                repos={r}
+                    />
+                )
+            }
+            {/*<Repository {...props}/>*/}
         </div>
     );
 }

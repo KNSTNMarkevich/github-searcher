@@ -14,7 +14,9 @@ function Header(props) {
         event.preventDefault();
         props.isSearched(true) //может поменять на наличие буков
         props.SetSearchValue(searchBar)
+
         props.getUserProfileInfo(searchBar)
+        props.getUserProfileRepos(searchBar)
     }
 
 

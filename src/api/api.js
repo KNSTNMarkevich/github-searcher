@@ -13,3 +13,12 @@ export const userAPI = {
     }
 
 }
+
+export const reposAPI = {
+
+    getRepos(username){
+        return instance.get(`users/${username}/repos`)
+            .then(response => response.data)
+    }
+
+}

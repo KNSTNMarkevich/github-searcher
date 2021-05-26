@@ -1,16 +1,20 @@
-
+import style from './Repository.module.css'
 
 function Repository(props) {
+    console.log(props.repos.name)
     return (
         <div>
-            <div>
-
+            <div className={style.repositoryItem}>
+                <div >
+                    {props.repos.name}
+                </div>
+                <div>
+                    {props.repos.description || 'Without Description'}
+                </div>
             </div>
-            powel nuxui repos
         </div>
     );
 }
-
 
 
 export default Repository
