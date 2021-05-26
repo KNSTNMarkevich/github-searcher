@@ -1,7 +1,7 @@
 import style from './Repository.module.css'
 
 function Repository(props) {
-    console.log(props.repos.name)
+
     return (
         <div>
             <div className={style.repositoryItem}>

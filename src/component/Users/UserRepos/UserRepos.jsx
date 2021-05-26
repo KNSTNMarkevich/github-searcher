@@ -3,26 +3,28 @@ import {useEffect, useState} from "react";
 
 
 function UserRepos(props) {
-    const [repos, setRepos] = useState(props.repos)
+/*    const [repos, setRepos] = useState(props.repos)
 
     useEffect(() => {
 
         setRepos(props.repos)
-    },[props.repos]);
+    },[props.repos]);*/
+
     return (
-
-
 
         <div>
               <div>
                 Repositories({props.repos.length})
             </div>
-                   {
+                   {props.repos
+                       ?
                 props.repos.map(r =>
                     <Repository key={r.id}
                                 repos={r}
                     />
                 )
+                       :
+                       'Loading...'
             }
             {/*<Repository {...props}/>*/}
         </div>

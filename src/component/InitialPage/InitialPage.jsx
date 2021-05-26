@@ -1,18 +1,22 @@
+import React from 'react'
 import style from './InitialPage.module.css'
 import SearchLarge from "../../assets/icons/SearchLarge.png";
-import {Redirect} from "react-router-dom";
-import React, {useEffect} from "react";
+import {NavLink, Redirect} from "react-router-dom";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {getUserProfileInfo} from "../../redux/users-reducer";
 import {withRouter} from "react-router";
 import {isSearched} from "../../redux/search-reducer";
 
-function InitialPage(props) {
+const InitialPage = React.memo(function (props) {
 
-    if(props.isSearchedState){
+    if (props.searchValue) {
+        console.log(props.searchValue)
+        props.isSearched(false)
         return <Redirect to={`/users/${props.searchValue}/`}/>
     }
+
+    props.isSearched(false)
 
     return (
         <div className={style.initialWrapper}>
@@ -24,7 +28,8 @@ function InitialPage(props) {
         </div>
 
     );
-}
+})
+
 const mapStateToProps = (state) => ({
     user: state.users.user,
     searchValue: state.search.searchValue,
@@ -33,6 +38,7 @@ const mapStateToProps = (state) => ({
 
 
 export default compose(
-    connect(mapStateToProps,{getUserProfileInfo, isSearched}),
-    withRouter
+    connect(mapStateToProps, {getUserProfileInfo, isSearched}),
+    withRouter,
+
 )(InitialPage)

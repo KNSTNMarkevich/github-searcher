@@ -16,7 +16,8 @@ function Header(props) {
         props.SetSearchValue(searchBar)
 
         props.getUserProfileInfo(searchBar)
-        props.getUserProfileRepos(searchBar)
+/*        props.getUserProfileRepos(searchBar)*/
+
     }
 
 

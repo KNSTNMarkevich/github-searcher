@@ -1,4 +1,5 @@
 import {userAPI} from '../api/api.js'
+import {getUserProfileRepos} from "./repos-reducer";
 
 const SET_USER = 'SET_USER'
 
@@ -29,7 +30,8 @@ export const SetUser = (user) => {
 }
 
 export const getUserProfileInfo = (user) => async (dispatch) => {
-    const data = await userAPI.getUserInfo(user)
+    const data = await userAPI.getUserInfo(user);
+    dispatch(getUserProfileRepos(user))
     dispatch(SetUser(data));
 }
 
