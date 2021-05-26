@@ -1,23 +1,23 @@
 import style from './Users.module.css'
 import {connect} from "react-redux";
 import {getUserProfileInfo} from "../../redux/users-reducer";
-import {useEffect, useState} from "react";
 import {compose} from "redux";
 import {withRouter} from "react-router";
+import UserInfo from "./UserInfo/UserInfo";
+import UserRepos from "./UserRepos/UserRepos";
 
 function Users(props) {
-
-
     return (
         <div className={style.usersWrapper}>
             <div>
-                {props.user.login}
+                <UserInfo {...props} />
             </div>
-            powel nuxui
+            <div>
+                <UserRepos {...props} />
+            </div>
         </div>
     );
 }
-
 
 
 const mapStateToProps = (state) => ({
