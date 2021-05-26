@@ -2,31 +2,31 @@ import style from './Users.module.css'
 import {connect} from "react-redux";
 import {getUserProfileInfo} from "../../redux/users-reducer";
 import {useEffect, useState} from "react";
+import {compose} from "redux";
+import {withRouter} from "react-router";
 
 function Users(props) {
 
-  /*  let [profile, setProfile] = useState(null)
-    useEffect(() => {
-        setProfile(props.user)
-    }, [props.user]);*/
 
     return (
-        <div>
+        <div className={style.usersWrapper}>
             <div>
-                {  props.user.login }
+                {props.user.login}
             </div>
-            <div>
-                {props.user.followers}
-            </div>
-            <div>
-                {props.user.following}
-            </div>
-            dasdas
+            powel nuxui
         </div>
     );
 }
+
+
+
 const mapStateToProps = (state) => ({
-    user: state.users.user
+    user: state.users.user,
+    searchValue: state.search.searchValue
 })
 
-export default connect(mapStateToProps,{})(Users);
+export default compose(
+    connect(mapStateToProps,{getUserProfileInfo}),
+    withRouter
+)(Users)
+

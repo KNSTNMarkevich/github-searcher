@@ -1,28 +1,23 @@
 import React, {useState} from 'react';
 import style from './Header.module.css'
 import gitHub from '../../assets/icons/GitHubLogo.png'
-import {getUserProfileInfo} from "../../redux/users-reducer";
-import {Redirect} from "react-router-dom";
-import {connect} from "react-redux";
+import {Link, NavLink, Redirect} from "react-router-dom";
 
 function Header(props) {
 
     let [searchBar, setSearchBar] = useState('');
     const onSearchBarChange = (e) => {
         setSearchBar(e.currentTarget.value)
-
     }
 
     const handleSubmit = (event) => {
-
         event.preventDefault();
+        props.isSearched(true) //может поменять на наличие буков
+        props.SetSearchValue(searchBar)
         props.getUserProfileInfo(searchBar)
     }
 
 
-    if(props.user){
-        return <Redirect to={`/users/${searchBar}`}/>
-    }
 
     return (
         <div className={style.headerWrapper}>
@@ -35,13 +30,9 @@ function Header(props) {
                            onChange={onSearchBarChange}/>
                 </form>
             </div>
-
         </div>
-
     );
 }
 
-const mapStateToProps = (state) => ({
-    user: state.users.user
-})
-export default connect(mapStateToProps,{getUserProfileInfo})(Header);
+export default Header;
+
