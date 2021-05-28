@@ -1,8 +1,11 @@
 .usersWrapper {
-    width: 100%;
+    width: 1280px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-left: 56px;
     margin-right: 56px;
+}
+
+.userInfoContainer {
+}
+.userReposContainer {
 }

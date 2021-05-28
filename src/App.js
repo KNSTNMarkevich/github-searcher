@@ -1,10 +1,7 @@
-import logo from './logo.svg';
 import style from './App.module.css';
-import {BrowserRouter, HashRouter, Redirect, Route, Switch} from "react-router-dom"
-import Users from "./component/Users/Users";
+import {BrowserRouter, Route, Switch} from "react-router-dom"
 import InitialPage from "./component/InitialPage/InitialPage";
 import store from "./redux/store"
-import {Provider} from "react-redux";
 import HeaderContainer from "./component/Header/HeaderContainer";
 import React from "react";
 import UsersContainer from "./component/Users/UsersContainer";

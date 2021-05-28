@@ -5,11 +5,10 @@ import UserRepos from "./UserRepos/UserRepos";
 function Users(props) {
     return (
         <div className={style.usersWrapper}>
-            <div>
+            <div className={style.userInfoContainer}>
                 <UserInfo {...props} />
             </div>
-            <div>
-
+            <div className={style.userReposContainer}>
                 <UserRepos {...props} />
             </div>
         </div>

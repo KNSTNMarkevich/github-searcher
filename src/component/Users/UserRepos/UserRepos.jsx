@@ -2,7 +2,7 @@ import Repository from "./Repository/Repository";
 import ReactPaginate from 'react-paginate';
 import {useEffect, useState} from "react";
 import paginatorStyle from './ReactPaginate.module.css'
-
+import style from './UserRepos.module.css'
 
 function UserRepos(props) {
     /*    const [repos, setRepos] = useState(props.repos)
@@ -16,9 +16,8 @@ function UserRepos(props) {
     console.log(reposByDate)
 
     return (
-
         <div>
-            <div>
+            <div className={style.userReposWrapper}>
                 Repositories({props.totalReposCount})
             </div>
             {props.repos

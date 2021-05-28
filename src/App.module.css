@@ -1,5 +1,6 @@
 .appWrapper{
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   background-color: #E5E5E5;
@@ -7,7 +8,8 @@
 
 .appWrapperContent{
   display: flex;
-  max-width: 1366px;
+  justify-content: center;
+  width: 100%;
   min-height: 662px;
 
 }
