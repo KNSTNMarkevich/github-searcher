@@ -8,7 +8,10 @@ import {getUserProfileRepos} from "../../redux/repos-reducer";
 
 const mapStateToProps = (state) => ({
     user: state.users.user,
-    searchValue: state.search.searchValue
+    searchValue: state.search.searchValue,
+    currentPage: state.repos.currentPage,
+    perPage: state.repos.perPage
+
 })
 
 export default compose(

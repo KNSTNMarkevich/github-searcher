@@ -16,7 +16,6 @@ const InitialPage = React.memo(function (props) {
         return <Redirect to={`/users/${props.searchValue}/`}/>
     }
 
-    props.isSearched(false)
 
     return (
         <div className={style.initialWrapper}>

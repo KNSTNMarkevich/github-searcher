@@ -9,15 +9,11 @@ export const userAPI = {
     getUserInfo(username){
         return instance.get(`users/${username}`)
             .then(response => response.data)
-    }
+    },
 
-}
-
-export const reposAPI = {
-
-    getRepos(username){
-        return instance.get(`users/${username}/repos`)
+    getRepos(username, currentPage, perPage){
+        return instance.get(`users/${username}/repos?page=${currentPage}&per_page=${perPage}`)
             .then(response => response.data)
     }
-
 }
+

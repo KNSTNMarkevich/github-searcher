@@ -7,6 +7,7 @@ import store from "./redux/store"
 import {Provider} from "react-redux";
 import HeaderContainer from "./component/Header/HeaderContainer";
 import React from "react";
+import UsersContainer from "./component/Users/UsersContainer";
 
 window.store = store;
 
@@ -19,7 +20,7 @@ function App() {
                     <div className={style.appWrapperContent}>
                         <Switch>
                             <Route exact path='/users/:user?/'
-                                   render={() => <Users/>}/>
+                                   render={() => <UsersContainer/>}/>
                             <Route exact path='/'
                                    render={() => <InitialPage/>}
                             />
