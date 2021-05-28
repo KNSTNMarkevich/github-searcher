@@ -7,7 +7,7 @@ const SET_IS_FETCHING = 'SET_IS_FETCHING'
 let initialState = {
     repos: [],
     selected: {
-        selected: 1
+        selected: 0
     },
     perPage: 4,
     isFetching: false,

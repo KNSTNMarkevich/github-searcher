@@ -1,6 +1,7 @@
 import Repository from "./Repository/Repository";
 import ReactPaginate from 'react-paginate';
 import {useEffect, useState} from "react";
+import paginatorStyle from './ReactPaginate.module.css'
 
 
 function UserRepos(props) {
@@ -36,14 +37,18 @@ function UserRepos(props) {
                 marginPagesDisplayed={1}
                 onPageChange = {props.onPageChanged}
                 initialPage = {props.currentPage}
-                forcePage={null}
-                previousLabel={'previous'}
-                nextLabel={'next'}
-                breakLabel={'...'}
-                breakClassName={'break-me'}
+                containerClassName={paginatorStyle.paginatorContainer}
+                pageClassName = {paginatorStyle.paginatorItem}
+                breakClassName = {paginatorStyle.paginatorBreak}
+                previousClassName={paginatorStyle.paginatorPrevious}
+                nextClassName={paginatorStyle.paginatorNext}
 
-                containerClassName={'pagination'}
-                activeClassName={'active'}
+
+                forcePage={null}
+                previousLabel={'<'}
+                nextLabel={'>'}
+                breakLabel={'...'}
+                activeClassName={paginatorStyle.paginatorItemActive}
             />
 
             {/*<Repository {...props}/>*/}

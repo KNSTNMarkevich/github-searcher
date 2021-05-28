@@ -13,7 +13,7 @@ const InitialPage = React.memo(function (props) {
     if (props.searchValue) {
         console.log(props.searchValue)
         props.isSearched(false)
-        return <Redirect to={`/users/${props.searchValue}/`}/>
+        return <Redirect to={`/users/${props.searchValue}`}/>
     }
 
 

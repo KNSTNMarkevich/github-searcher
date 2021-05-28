@@ -8,9 +8,11 @@ import {getUserProfileRepos, setCurrentPage} from "../../redux/repos-reducer";
 
 class UsersContainer extends React.Component {
 
+/*
     componentDidMount() {
         this.props.getUserProfileRepos(this.props.user.login, this.props.currentPage, this.props.perPage)
     }
+*/
 
     onPageChanged = (pageNumber) => {
 

@@ -51,13 +51,13 @@ export const setIsFetching = (isFetching) => {
 
 export const getUserProfileInfo = (user, currentPage, perPage) => async (dispatch) => {
     dispatch(setIsFetching(true))
-
     const data = await userAPI.getUserInfo(user);
-    dispatch(getUserProfileRepos(user, currentPage, perPage))
-
     dispatch(setIsFetching(false))
+
     dispatch(SetUser(data));
     dispatch(setTotalReposCount(data.public_repos))
+
+    dispatch(getUserProfileRepos(user, currentPage, perPage))
 }
 
 

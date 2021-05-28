@@ -1,0 +1,52 @@
+.paginatorContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.paginatorItem {
+    color: #808080;
+    height: 25px;
+    width: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 22px;
+    border-radius: 25%;
+}
+
+.paginatorItem:hover{
+    background: #0064EB;
+    color: white;
+}
+
+.paginatorItemActive{
+    background: #0064EB;
+    color: white;
+}
+
+.paginatorBreak {
+    cursor: pointer;
+    padding-left: 16px;
+}
+
+.paginatorPrevious{
+    color: #808080;
+    cursor: pointer;
+}
+
+.paginatorPrevious:hover{
+    color: #0064EB;
+}
+
+.paginatorNext{
+    color: #808080;
+    cursor: pointer;
+    margin-left: 22px;
+}
+
+.paginatorNext:hover{
+    color: #0064EB;
+}
