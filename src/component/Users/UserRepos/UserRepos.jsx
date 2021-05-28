@@ -35,6 +35,7 @@ function UserRepos(props) {
                 pageRangeDisplayed={2}
                 marginPagesDisplayed={1}
                 onPageChange = {props.onPageChanged}
+                initialPage = {props.currentPage}
                 forcePage={null}
                 previousLabel={'previous'}
                 nextLabel={'next'}

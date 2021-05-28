@@ -6,7 +6,9 @@ const SET_IS_FETCHING = 'SET_IS_FETCHING'
 
 let initialState = {
     repos: [],
-    currentPage: 1,
+    selected: {
+        selected: 1
+    },
     perPage: 4,
     isFetching: false,
 
@@ -26,7 +28,8 @@ const reposReducer = (state = initialState, action) => {
         case SET_CURRENT_PAGE: {
             return {
                 ...state,
-                currentPage: action.currentPage
+                ...state.selected,
+                selected: action.currentPage
             }
         }
         case SET_IS_FETCHING: {

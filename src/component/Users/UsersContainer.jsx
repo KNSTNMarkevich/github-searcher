@@ -8,24 +8,26 @@ import {getUserProfileRepos, setCurrentPage} from "../../redux/repos-reducer";
 
 class UsersContainer extends React.Component {
 
-/*     componentDidMount() {
+    componentDidMount() {
         this.props.getUserProfileRepos(this.props.user.login, this.props.currentPage, this.props.perPage)
-    }*/
+    }
 
     onPageChanged = (pageNumber) => {
 
-        this.props.setCurrentPage(pageNumber);
-        this.props.getUserProfileRepos(this.props.user.login, pageNumber, this.props.perPage)
+        this.props.setCurrentPage(pageNumber.selected);
+        this.props.getUserProfileRepos(this.props.user.login, pageNumber.selected, this.props.perPage)
     }
 
-/*    componentDidUpdate(prevProps, prevState, snapshot) {
+/*
+   componentDidUpdate(prevProps, prevState, snapshot) {
          let currentPage = this.props.currentPage
-         if(prevProps.currentPage.selected !== prevState.currentPage.selected){
+         if(prevProps.currentPage !== prevState.currentPage){
              this.setState({
                  currentPage: this.props.currentPage
              })
          }
-    }*/
+    }
+*/
 
     render() {
 
@@ -46,7 +48,7 @@ class UsersContainer extends React.Component {
 const mapStateToProps = (state) => ({
     user: state.users.user,
     repos: state.repos.repos,
-    currentPage: state.repos.currentPage,
+    currentPage: state.repos.selected.selected,
     perPage: state.repos.perPage,
     totalReposCount: state.users.totalReposCount,
     isFetching: state.users.isFetching

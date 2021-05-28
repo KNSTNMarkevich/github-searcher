@@ -9,7 +9,7 @@ import {getUserProfileRepos} from "../../redux/repos-reducer";
 const mapStateToProps = (state) => ({
     user: state.users.user,
     searchValue: state.search.searchValue,
-    currentPage: state.repos.currentPage,
+    currentPage: state.repos.selected.selected,
     perPage: state.repos.perPage
 
 })
