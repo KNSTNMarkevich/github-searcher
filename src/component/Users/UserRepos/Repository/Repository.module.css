@@ -27,7 +27,19 @@
 
 @media screen and (max-width: 1279px){
     .repositoryWrapper{
-        width: 600px;
+        max-width: 550px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .repositoryWrapper{
+        max-width: 450px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .repositoryWrapper{
+        max-width: 400px;
     }
 }
 

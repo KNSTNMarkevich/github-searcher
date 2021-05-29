@@ -27,15 +27,66 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
 }
 
 @media screen and (max-width: 1279px){
-    .userReposContainer{
-        width: 650px;
+    .userReposContainer {
+        max-width: 550px;
+        margin: 0;
     }
 
     .userReposListWrapper{
-        width: 650px;
+        max-width: 550px;
+    }
+
+    .paginator{
+        max-width: 550px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .userReposContainer {
+        max-width: 450px;
+        margin: 0;
+    }
+
+    .userReposListWrapper{
+        max-width: 450px;
+    }
+
+    .paginator{
+        max-width: 450px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .userReposContainer {
+        width: 400px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .userReposListWrapper{
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .paginator{
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
     }
 }
 

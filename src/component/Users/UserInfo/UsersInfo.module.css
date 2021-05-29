@@ -64,6 +64,28 @@
     height: 16px;
 }
 
+@media screen and (max-width: 1000px){
+    .UserInfoWrapper{
+        max-width: 280px;
+    }
+    .userAvatar {
+        max-width: 250px;
+        max-height: 250px;
+        border-radius: 50%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    .UserInfoWrapper{
+        max-width: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
 @media screen and (max-width: 400px){
     .UserInfoWrapper{
         max-width: 280px;

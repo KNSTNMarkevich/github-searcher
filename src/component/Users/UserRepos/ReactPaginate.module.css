@@ -65,6 +65,13 @@
     text-align: center;
 }
 
+@media screen and (max-width: 1279px){
+    .paginatorContainer{
+        margin-left: 0;
+    }
+}
+
+
 @media screen and (max-width: 400px){
     .paginatorContainer{
         margin-left: 0;

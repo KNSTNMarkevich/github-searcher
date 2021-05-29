@@ -6,6 +6,39 @@
     margin-right: 56px;
 }
 
+@media screen and (max-width: 1279px){
+    .usersWrapper {
+        display: flex;
+        justify-content: space-around;
+        width: 1001px;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 1000px){
+    .usersWrapper {
+        display: flex;
+        justify-content: space-around;
+        width: 768px;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    .usersWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        margin: 0;
+    }
+
+}
+
+
 @media screen and (max-width: 400px){
     .usersWrapper {
         max-width: 320px;

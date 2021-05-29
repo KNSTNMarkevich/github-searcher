@@ -22,9 +22,9 @@
     color: #808080;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1279px){
     .initialWrapper{
-        justify-content: flex-start;
+
     }
     .initialContent{
         margin-top: 100px;
