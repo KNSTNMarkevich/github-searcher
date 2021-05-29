@@ -16,14 +16,27 @@
 }
 
 .searchBar {
-  padding: 0;
   border: 0;
   border: none;
   margin-left: 22px;
+  padding-left: 44px;
   width: 500px;
   height: 40px;
   border-radius: 5px;
+  background: url("../../assets/icons/searchSmall.png") no-repeat 19px 13px;
+  background-color: #FFFFFF;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.01em;
+  color: #808080;
 }
+
+.searchBar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2pt #808080;
+}
+
 
 @media screen and (max-width: 620px){
   .headerWrapper{
