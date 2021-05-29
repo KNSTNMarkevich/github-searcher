@@ -11,7 +11,8 @@ let initialState = {
     },
     perPage: 4,
     isFetching: false,
-
+    firstListItem: 1,
+    lastListItem: 4,
 };
 
 
@@ -29,7 +30,9 @@ const reposReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...state.selected,
-                selected: action.currentPage
+                selected: action.currentPage,
+                firstListItem: action.currentPage*4-3,
+                lastListItem: action.currentPage*4
             }
         }
         case SET_IS_FETCHING: {

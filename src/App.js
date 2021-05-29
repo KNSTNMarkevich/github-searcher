@@ -12,6 +12,7 @@ function App() {
 
     return (
         <BrowserRouter>
+            <div className={style.appContainer}>
                 <div className={style.appWrapper}>
                     <HeaderContainer/>
                     <div className={style.appWrapperContent}>
@@ -25,10 +26,10 @@ function App() {
                     </div>
 
                 </div>
+            </div>
         </BrowserRouter>
     );
 }
-
 
 
 export default App;

@@ -1,10 +1,30 @@
-.userReposWrapper {
-    /*
+.userReposContainer {
     width: 877px;
-    */
-/*    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     margin-left: 56px;
-    margin-right: 56px;*/
+    margin-right: 56px;
+}
+
+.userReposCount {
+    margin: 29px 0;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    color: #000000;
+}
+
+.userReposListWrapper{
+    width: 877px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.paginator {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }

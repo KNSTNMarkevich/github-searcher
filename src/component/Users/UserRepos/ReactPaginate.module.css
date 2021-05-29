@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     list-style-type: none;
+    padding-left: 23px;
 }
 
 .paginatorItem {
@@ -49,4 +50,17 @@
 
 .paginatorNext:hover{
     color: #0064EB;
+}
+
+.break {
+    color: #808080;
+    margin-left: 5px;
+}
+
+.paginatorDescription {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    color: #808080;
+    text-align: center;
 }

@@ -53,7 +53,9 @@ const mapStateToProps = (state) => ({
     currentPage: state.repos.selected.selected,
     perPage: state.repos.perPage,
     totalReposCount: state.users.totalReposCount,
-    isFetching: state.users.isFetching
+    isFetching: state.users.isFetching,
+    firstListItem: state.repos.firstListItem,
+    lastListItem: state.repos.lastListItem
 })
 
 export default compose(

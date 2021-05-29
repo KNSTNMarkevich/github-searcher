@@ -2,6 +2,8 @@
     margin-top: 39px;
     display: flex;
     flex-direction: column;
+    width: 295px;
+    margin-left: 6px;
 }
 
 .userAvatar {
