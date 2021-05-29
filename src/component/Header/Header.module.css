@@ -24,3 +24,29 @@
   height: 40px;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 620px){
+  .headerWrapper{
+    display: flex;
+    justify-content: center;
+  }
+  .headerLogo{
+    margin-left: 10px;
+  }
+  .searchBar {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 380px){
+  .headerWrapper{
+    display: flex;
+    justify-content: center;
+  }
+  .headerLogo{
+    margin-left: 10px;
+  }
+  .searchBar {
+    width: 220px;
+  }
+}

@@ -18,10 +18,12 @@ const InitialPage = React.memo(function (props) {
 
     return (
         <div className={style.initialWrapper}>
-            <img src={SearchLarge}/>
-            <div className={style.contentText}>
-                Start with searching
-                a GitHub user
+            <div className={style.initialContent}>
+                <img src={SearchLarge}/>
+                <div className={style.contentText}>
+                    Start with searching
+                    a GitHub user
+                </div>
             </div>
         </div>
 

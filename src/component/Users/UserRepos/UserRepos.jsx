@@ -21,45 +21,47 @@ function UserRepos(props) {
     console.log(reposByDate)*/
 
     return (
-        <div className={style.userReposContainer}>
-            <div className={style.userReposCount}>
-                Repositories ({props.totalReposCount})
-            </div>
-            <div className={style.userReposListWrapper}>
-                {props.repos
-                    ?
-                    props.repos.map(r =>
-                        <Repository key={r.id}
-                                    repos={r}
+        <div >
+            <div className={style.userReposContainer}>
+                <div className={style.userReposCount}>
+                    Repositories ({props.totalReposCount})
+                </div>
+                <div className={style.userReposListWrapper}>
+                    {props.repos
+                        ?
+                        props.repos.map(r =>
+                            <Repository key={r.id}
+                                        repos={r}
+                            />
+                        )
+                        :
+                        <Preloader />
+                    }
+                    <div className={style.paginator}>
+                        <div className={paginatorStyle.paginatorDescription}>
+                            {props.firstListItem} - {props.lastListItem} of {props.totalReposCount} items
+                        </div>
+                        <ReactPaginate
+                            pageCount={Math.ceil(props.totalReposCount / props.perPage)}
+                            pageRangeDisplayed={2}
+                            marginPagesDisplayed={1}
+                            onPageChange={props.onPageChanged}
+                            initialPage={props.currentPage}
+                            containerClassName={paginatorStyle.paginatorContainer}
+                            pageClassName={paginatorStyle.paginatorItem}
+                            breakClassName={paginatorStyle.paginatorBreak}
+                            previousClassName={paginatorStyle.paginatorPrevious}
+                            nextClassName={paginatorStyle.paginatorNext}
+                            activeClassName={paginatorStyle.paginatorItemActive}
+
+
+                            forcePage={null}
+                            previousLabel={'<'}
+                            nextLabel={'>'}
+                            breakLabel={'...'}
+                            breakClassName={paginatorStyle.break}
                         />
-                    )
-                    :
-                    <Preloader />
-                }
-                <div className={style.paginator}>
-                    <div className={paginatorStyle.paginatorDescription}>
-                        {props.firstListItem} - {props.lastListItem} of {props.totalReposCount} items
                     </div>
-                    <ReactPaginate
-                        pageCount={Math.ceil(props.totalReposCount / props.perPage)}
-                        pageRangeDisplayed={2}
-                        marginPagesDisplayed={1}
-                        onPageChange={props.onPageChanged}
-                        initialPage={props.currentPage}
-                        containerClassName={paginatorStyle.paginatorContainer}
-                        pageClassName={paginatorStyle.paginatorItem}
-                        breakClassName={paginatorStyle.paginatorBreak}
-                        previousClassName={paginatorStyle.paginatorPrevious}
-                        nextClassName={paginatorStyle.paginatorNext}
-                        activeClassName={paginatorStyle.paginatorItemActive}
-
-
-                        forcePage={null}
-                        previousLabel={'<'}
-                        nextLabel={'>'}
-                        breakLabel={'...'}
-                        breakClassName={paginatorStyle.break}
-                    />
                 </div>
             </div>
         </div>

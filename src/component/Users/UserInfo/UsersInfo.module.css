@@ -2,13 +2,13 @@
     margin-top: 39px;
     display: flex;
     flex-direction: column;
-    width: 295px;
+    max-width: 295px;
     margin-left: 6px;
 }
 
 .userAvatar {
-    width: 280px;
-    height: 280px;
+    max-width: 280px;
+    max-height: 280px;
     border-radius: 50%;
 }
 
@@ -62,4 +62,16 @@
     margin-left: 20px;
     width: 16px;
     height: 16px;
+}
+
+@media screen and (max-width: 400px){
+    .UserInfoWrapper{
+        max-width: 280px;
+    }
+    .userAvatar {
+        max-width: 250px;
+        max-height: 250px;
+        border-radius: 50%;
+    }
+
 }

@@ -23,5 +23,17 @@
     font-size: 16px;
     line-height: 19px;
 
-
 }
+
+@media screen and (max-width: 1279px){
+    .repositoryWrapper{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .repositoryWrapper{
+        width: 300px;
+    }
+}
+

@@ -1,5 +1,5 @@
 .userReposContainer {
-    width: 877px;
+    max-width: 877px;
     display: flex;
     flex-direction: column;
     margin-left: 56px;
@@ -27,4 +27,37 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+@media screen and (max-width: 1279px){
+    .userReposContainer{
+        width: 650px;
+    }
+
+    .userReposListWrapper{
+        width: 650px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .userReposContainer {
+        width: 320px;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .userReposListWrapper{
+        width: 320px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .paginator{
+        max-width: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
 }

@@ -2,6 +2,11 @@
 .initialWrapper{
     display: flex;
     width: 100%;
+    flex-direction: column;
+}
+.initialContent{
+    margin-top: 220px;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -15,4 +20,26 @@
     line-height: 140%;
     text-align: center;
     color: #808080;
+}
+
+@media screen and (max-width: 768px){
+    .initialWrapper{
+        justify-content: flex-start;
+    }
+    .initialContent{
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 380px){
+    .contentText{
+        margin-top: 47px;
+        width: 210px;
+        font-family: Inter, sans-serif;
+        font-size: 22px;
+        line-height: 140%;
+        text-align: center;
+        color: #808080;
+    }
+
 }

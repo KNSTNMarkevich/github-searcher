@@ -64,3 +64,10 @@
     color: #808080;
     text-align: center;
 }
+
+@media screen and (max-width: 400px){
+    .paginatorContainer{
+        margin-left: 0;
+    }
+}
+
