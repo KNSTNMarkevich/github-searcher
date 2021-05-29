@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from "react-redux";
-import {getUserProfileInfo} from "../../redux/users-reducer";
+import {getUserProfileInfo, setIsFetching} from "../../redux/users-reducer";
 import {compose} from "redux";
 import Users from "./Users";
 import {getUserProfileRepos, setCurrentPage} from "../../redux/repos-reducer";
@@ -53,10 +53,11 @@ const mapStateToProps = (state) => ({
     totalReposCount: state.users.totalReposCount,
     isFetching: state.users.isFetching,
     firstListItem: state.repos.firstListItem,
-    lastListItem: state.repos.lastListItem
+    lastListItem: state.repos.lastListItem,
+    isEmptyUser: state.app.isEmptyUser
 })
 
 export default compose(
-    connect(mapStateToProps,{getUserProfileInfo, setCurrentPage, getUserProfileRepos})
+    connect(mapStateToProps,{getUserProfileInfo, setCurrentPage, getUserProfileRepos, setIsFetching})
 )(UsersContainer)
 

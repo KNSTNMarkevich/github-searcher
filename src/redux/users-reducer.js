@@ -57,7 +57,8 @@ export const getUserProfileInfo = (user, currentPage, perPage) => async (dispatc
         dispatch(setIsFetching(false))
         dispatch(SetUser(data));
         dispatch(setTotalReposCount(data.public_repos))
-            dispatch(getUserProfileRepos(user, currentPage, perPage))
+        dispatch(getUserProfileRepos(user, currentPage, perPage))
+        dispatch(setEmptyUser(false))
     }catch(e){
         dispatch(setEmptyUser(true))
         alert('not found user')
