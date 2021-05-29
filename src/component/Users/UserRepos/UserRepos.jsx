@@ -13,8 +13,8 @@ function UserRepos(props) {
             setRepos(props.repos)
         },[props.repos]);*/
 
-    let reposByDate = props.repos.sort((r, i) => new Date(i.created_at).getTime() - new Date(r.created_at).getTime())
-    console.log(reposByDate)
+/*    let reposByDate = props.repos.sort((r, i) => new Date(i.created_at).getTime() - new Date(r.created_at).getTime())
+    console.log(reposByDate)*/
 
     return (
         <div className={style.userReposContainer}>
@@ -24,7 +24,7 @@ function UserRepos(props) {
             <div className={style.userReposListWrapper}>
                 {props.repos
                     ?
-                    reposByDate.map(r =>
+                    props.repos.map(r =>
                         <Repository key={r.id}
                                     repos={r}
                         />

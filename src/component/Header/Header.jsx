@@ -12,9 +12,8 @@ function Header(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.isSearched(true) //может поменять на наличие буков
+        props.isSearched(true)
         props.SetSearchValue(searchBar)
-
         props.getUserProfileInfo(searchBar, props.currentPage, props.perPage)
 
     }

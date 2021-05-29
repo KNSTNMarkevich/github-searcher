@@ -14,12 +14,12 @@ function UserInfo(props) {
                     {props.user.name || null}
                 </div>
                 <div className={style.userLogin}>
-                    <a className={style.userLogin} href={`/${props.user.url}`}>{props.user.login}</a>
+                    <a className={style.userLogin} href={`/${props.user.html_url}`}>{props.user.login}</a>
                 </div>
                 <div className={style.userSubscribesInfo}>
                     <img className={style.followersIcon} src={followersIcon} alt=""/>
                     <div className={style.userFollowers}>
-                        {followersTransform(props.user.followers) + 'k'} followers
+                        {props.user.followers >= 1000 ? followersTransform(props.user.followers) + 'k' : props.user.followers} follower
                     </div>
                     <img className={style.followingIcon} src={followingIcon} alt=""/>
                     <div className={style.userFollowers}>

@@ -1,4 +1,5 @@
 import {reposAPI, userAPI} from "../api/api";
+import {setEmptyRepos} from "./app-reducer";
 
 const SET_REPOS = 'SET_REPOS'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
@@ -7,7 +8,7 @@ const SET_IS_FETCHING = 'SET_IS_FETCHING'
 let initialState = {
     repos: [],
     selected: {
-        selected: 0
+        selected: 1
     },
     perPage: 4,
     isFetching: false,
@@ -57,10 +58,17 @@ export const setIsFetching = (isFetching) => {
 }
 
 export const getUserProfileRepos = (username, currentPage, perPage) => async (dispatch) => {
-    dispatch(setIsFetching(true))
-    const data = await userAPI.getRepos(username, currentPage, perPage)
-    dispatch(setIsFetching(false))
-    dispatch(SetRepos(data));
+    try {
+        dispatch(setIsFetching(true))
+        const data = await userAPI.getRepos(username, currentPage, perPage)
+        dispatch(setIsFetching(false))
+        dispatch(SetRepos(data));
+        dispatch(setEmptyRepos(false))
+    } catch (e) {
+        dispatch(setEmptyRepos(true))
+        alert('repos not found')
+    }
+
 }
 
 export default reposReducer;

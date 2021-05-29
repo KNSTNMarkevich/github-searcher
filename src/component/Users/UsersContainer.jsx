@@ -2,21 +2,18 @@ import React from 'react'
 import {connect} from "react-redux";
 import {getUserProfileInfo} from "../../redux/users-reducer";
 import {compose} from "redux";
-import {withRouter} from "react-router";
 import Users from "./Users";
 import {getUserProfileRepos, setCurrentPage} from "../../redux/repos-reducer";
 import Preloader from "../common/Preloader/Preloader";
 
 class UsersContainer extends React.Component {
 
-/*
-    componentDidMount() {
+
+ /*   componentDidMount() {
         this.props.getUserProfileRepos(this.props.user.login, this.props.currentPage, this.props.perPage)
-    }
-*/
+    }*/
 
     onPageChanged = (pageNumber) => {
-
         this.props.setCurrentPage(pageNumber.selected);
         this.props.getUserProfileRepos(this.props.user.login, pageNumber.selected, this.props.perPage)
     }
@@ -60,7 +57,6 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps,{getUserProfileInfo, setCurrentPage, getUserProfileRepos}),
-    withRouter
+    connect(mapStateToProps,{getUserProfileInfo, setCurrentPage, getUserProfileRepos})
 )(UsersContainer)
 

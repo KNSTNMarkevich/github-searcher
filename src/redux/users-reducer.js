@@ -1,5 +1,6 @@
 import {userAPI} from '../api/api.js'
 import {getUserProfileRepos} from "./repos-reducer";
+import {setEmptyUser} from "./app-reducer";
 
 const SET_USER = 'SET_USER'
 const SET_TOTAL_REPOS_COUNT = 'SET_TOTAL_REPOS_COUNT'
@@ -50,14 +51,17 @@ export const setIsFetching = (isFetching) => {
 }
 
 export const getUserProfileInfo = (user, currentPage, perPage) => async (dispatch) => {
-    dispatch(setIsFetching(true))
-    const data = await userAPI.getUserInfo(user);
-    dispatch(setIsFetching(false))
-
-    dispatch(SetUser(data));
-    dispatch(setTotalReposCount(data.public_repos))
-
-    dispatch(getUserProfileRepos(user, currentPage, perPage))
+    try{
+        dispatch(setIsFetching(true))
+        const data = await userAPI.getUserInfo(user);
+        dispatch(setIsFetching(false))
+        dispatch(SetUser(data));
+        dispatch(setTotalReposCount(data.public_repos))
+            dispatch(getUserProfileRepos(user, currentPage, perPage))
+    }catch(e){
+        dispatch(setEmptyUser(true))
+        alert('not found user')
+    }
 }
 
 
