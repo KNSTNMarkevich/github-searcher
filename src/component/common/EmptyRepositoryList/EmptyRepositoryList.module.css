@@ -1,0 +1,26 @@
+.emptyReposPageContainer{
+    width: 877px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.emptyReposPageContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyReposPageIcon {
+    padding-bottom: 42px;
+    margin-top: 229px;
+}
+
+.emptyReposText {
+    font-family: Inter, sans-serif;
+    font-size: 22px;
+    line-height: 140%;
+    color: #808080;
+}

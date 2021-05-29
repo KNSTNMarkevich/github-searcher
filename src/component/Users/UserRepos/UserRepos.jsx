@@ -4,8 +4,12 @@ import {useEffect, useState} from "react";
 import paginatorStyle from './ReactPaginate.module.css'
 import style from './UserRepos.module.css'
 import Preloader from "../../common/Preloader/Preloader";
+import EmptyRepositoryList from "../../common/EmptyRepositoryList/EmptyRepositoryList";
 
 function UserRepos(props) {
+    if (props.totalReposCount === 0) {
+        return <EmptyRepositoryList />
+    }
     /*    const [repos, setRepos] = useState(props.repos)
 
         useEffect(() => {
