@@ -14,7 +14,7 @@ function UserInfo(props) {
                     {props.user.name || null}
                 </div>
                 <div className={style.userLogin}>
-                    <a className={style.userLogin} href={`/${props.user.html_url}`}>{props.user.login}</a>
+                    <a className={style.userLogin} target="_blank"  href={`${props.user.html_url}`}>{props.user.login}</a>
                 </div>
                 <div className={style.userSubscribesInfo}>
                     <img className={style.followersIcon} src={followersIcon} alt=""/>

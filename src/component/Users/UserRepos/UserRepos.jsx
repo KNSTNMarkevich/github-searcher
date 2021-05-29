@@ -1,6 +1,5 @@
 import Repository from "./Repository/Repository";
 import ReactPaginate from 'react-paginate';
-import {useEffect, useState} from "react";
 import paginatorStyle from './ReactPaginate.module.css'
 import style from './UserRepos.module.css'
 import Preloader from "../../common/Preloader/Preloader";
@@ -10,18 +9,9 @@ function UserRepos(props) {
     if (props.totalReposCount === 0) {
         return <EmptyRepositoryList />
     }
-    /*    const [repos, setRepos] = useState(props.repos)
-
-        useEffect(() => {
-
-            setRepos(props.repos)
-        },[props.repos]);*/
-
-/*    let reposByDate = props.repos.sort((r, i) => new Date(i.created_at).getTime() - new Date(r.created_at).getTime())
-    console.log(reposByDate)*/
 
     return (
-        <div >
+        <div>
             <div className={style.userReposContainer}>
                 <div className={style.userReposCount}>
                     Repositories ({props.totalReposCount})
