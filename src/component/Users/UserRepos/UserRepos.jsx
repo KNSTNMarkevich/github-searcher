@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import {useEffect, useState} from "react";
 import paginatorStyle from './ReactPaginate.module.css'
 import style from './UserRepos.module.css'
+import Preloader from "../../common/Preloader/Preloader";
 
 function UserRepos(props) {
     /*    const [repos, setRepos] = useState(props.repos)
@@ -29,7 +30,7 @@ function UserRepos(props) {
                         />
                     )
                     :
-                    'Loading...'
+                    <Preloader />
                 }
                 <div className={style.paginator}>
                     <div className={paginatorStyle.paginatorDescription}>

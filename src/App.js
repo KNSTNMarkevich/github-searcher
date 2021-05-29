@@ -6,6 +6,9 @@ import HeaderContainer from "./component/Header/HeaderContainer";
 import React from "react";
 import UsersContainer from "./component/Users/UsersContainer";
 
+
+import Preloader from "./component/common/Preloader/Preloader";
+
 window.store = store;
 
 function App() {
@@ -21,6 +24,9 @@ function App() {
                                    render={() => <UsersContainer/>}/>
                             <Route exact path='/'
                                    render={() => <InitialPage/>}
+                            />
+                            <Route exact path='/preloader'
+                                   render={() => <Preloader />}
                             />
                         </Switch>
                     </div>

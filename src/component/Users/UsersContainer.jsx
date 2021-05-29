@@ -5,6 +5,7 @@ import {compose} from "redux";
 import {withRouter} from "react-router";
 import Users from "./Users";
 import {getUserProfileRepos, setCurrentPage} from "../../redux/repos-reducer";
+import Preloader from "../common/Preloader/Preloader";
 
 class UsersContainer extends React.Component {
 
@@ -35,7 +36,7 @@ class UsersContainer extends React.Component {
 
         return (
             <>
-                {this.props.isFetching ? 'Loading...' : null}
+                {this.props.isFetching ? <Preloader /> : null}
                 <Users
                     {...this.props}
                     onPageChanged = {this.onPageChanged}
