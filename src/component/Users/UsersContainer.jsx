@@ -5,41 +5,51 @@ import {compose} from "redux";
 import Users from "./Users";
 import {getUserProfileRepos, setCurrentPage} from "../../redux/repos-reducer";
 import Preloader from "../common/Preloader/Preloader";
+import {withRouter} from "react-router";
+import UserNotFound from "../common/UserNotFound/UserNotFound";
+import {setEmptyUser} from "../../redux/app-reducer";
+
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
         debugger;
-        this.props.getUserProfileRepos(this.props.searchValue, this.props.selected.selected, this.props.perPage)
+/*        let user = this.props.match.params.user
+        if (!this.props.user.login) {
+            this.props.getUserProfileInfo(user)
+        }*/
+        if(!this.props.isEmptyUser){
+            this.props.getUserProfileRepos(this.props.searchValue, this.props.selected.selected, this.props.perPage)
+        }
     }
 
     onPageChanged = (pageNumber) => {
-        let incrementPageNumber = pageNumber.selected+1
-        if(typeof(incrementPageNumber) === "string"){
+        let incrementPageNumber = pageNumber.selected + 1
+        if (typeof (incrementPageNumber) === "string") {
             this.props.setCurrentPage(pageNumber.selected.selected);
             this.props.getUserProfileRepos(this.props.user.login, pageNumber.selected.selected, this.props.perPage)
-        }else if(typeof(incrementPageNumber) === "number"){
+        } else if (typeof (incrementPageNumber) === "number") {
             this.props.setCurrentPage(pageNumber.selected);
             this.props.getUserProfileRepos(this.props.user.login, incrementPageNumber, this.props.perPage)
         }
 
     }
+/*    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.user.login !== prevProps.user.login) {
+            this.props.getUserProfileRepos(this.props.searchValue, 0, this.props.perPage)
+        }
 
-/*
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        this.props.setCurrentPage(1)
-        this.props.getUserProfileRepos(this.props.searchValue, this.props.currentPage, this.props.perPage)
-    }
-*/
+    }*/
+
 
     render() {
 
         return (
             <>
-                {this.props.isFetching ? <Preloader /> : null}
+                {this.props.isFetching ? <Preloader/> : null}
                 <Users
                     {...this.props}
-                    onPageChanged = {this.onPageChanged}
+                    onPageChanged={this.onPageChanged}
                 />
             </>
         )
@@ -51,7 +61,7 @@ class UsersContainer extends React.Component {
 const mapStateToProps = (state) => ({
     user: state.users.user,
     repos: state.repos.repos,
-    selected: state.repos.selected,
+    selected: state.repos,
     perPage: state.repos.perPage,
     totalReposCount: state.users.totalReposCount,
     isFetching: state.users.isFetching,
@@ -62,6 +72,7 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps,{getUserProfileInfo, setCurrentPage, getUserProfileRepos, setIsFetching})
+    connect(mapStateToProps, {getUserProfileInfo, setCurrentPage, getUserProfileRepos, setIsFetching, setEmptyUser}),
+    withRouter
 )(UsersContainer)
 

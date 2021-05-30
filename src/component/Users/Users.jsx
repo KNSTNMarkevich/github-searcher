@@ -5,8 +5,9 @@ import UserNotFound from "../common/UserNotFound/UserNotFound";
 
 function Users(props) {
     if(props.isEmptyUser){
+        debugger;
         props.setIsFetching(false)
-        return  < UserNotFound />
+        return  <UserNotFound />
     }
     return (
         <div className={style.usersWrapper}>

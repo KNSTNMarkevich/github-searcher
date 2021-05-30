@@ -66,7 +66,6 @@ export const getUserProfileRepos = (username, currentPage, perPage) => async (di
         dispatch(setEmptyRepos(false))
     } catch (e) {
         dispatch(setEmptyRepos(true))
-        alert('repos not found')
     }
 
 }

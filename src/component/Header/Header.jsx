@@ -13,6 +13,7 @@ function Header(props) {
     }
 
     const handleSubmit = (event) => {
+        debugger
         event.preventDefault();
         props.isSearched(true)
         history.push(`/users/${searchBar}`)

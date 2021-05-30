@@ -7,7 +7,7 @@ import EmptyRepositoryList from "../../common/EmptyRepositoryList/EmptyRepositor
 
 function UserRepos(props) {
     if (props.totalReposCount === 0) {
-        return <EmptyRepositoryList />
+        return <EmptyRepositoryList/>
     }
 
     console.log(props.selected)
@@ -27,11 +27,11 @@ function UserRepos(props) {
                             />
                         )
                         :
-                        <Preloader />
+                        <Preloader/>
                     }
                     <div className={style.paginator}>
                         <div className={paginatorStyle.paginatorDescription}>
-                            {(props.firstListItem)+4} - {(props.lastListItem)+4} of {props.totalReposCount} items
+                            {(props.firstListItem) + 4} - {(props.lastListItem) + 4} of {props.totalReposCount} items
                         </div>
                         <ReactPaginate
                             pageCount={Math.ceil(props.totalReposCount / props.perPage)}
@@ -62,4 +62,3 @@ function UserRepos(props) {
 
 
 export default UserRepos
-

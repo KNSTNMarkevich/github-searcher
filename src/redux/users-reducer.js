@@ -51,13 +51,13 @@ export const setIsFetching = (isFetching) => {
 }
 
 export const getUserProfileInfo = (user) => async (dispatch) => {
+    debugger
     try{
         dispatch(setIsFetching(true))
         const data = await userAPI.getUserInfo(user);
         dispatch(setIsFetching(false))
         dispatch(SetUser(data));
         dispatch(setTotalReposCount(data.public_repos))
-/*        dispatch(getUserProfileRepos(user, currentPage, perPage))*/
         dispatch(setEmptyUser(false))
     }catch(e){
         dispatch(setEmptyUser(true))

@@ -10,12 +10,6 @@ import {isSearched} from "../../redux/search-reducer";
 
 const InitialPage = React.memo(function (props) {
 
-/*    if (props.searchValue) {
-        props.isSearched(false)
-        return <Redirect to={`/users/${props.searchValue}`}/>
-    }*/
-
-
     return (
         <div className={style.initialWrapper}>
             <div className={style.initialContent}>
