@@ -1,6 +1,6 @@
 
 export default function followersTransform (count) {
-    if (count >= 1100){
+    if (count >= 1100 && count <=9999){
         return (count/1000).toFixed(2)
     }
     else if(count >= 10000){

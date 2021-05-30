@@ -8,24 +8,27 @@ import Preloader from "../common/Preloader/Preloader";
 
 class UsersContainer extends React.Component {
 
-
- /*   componentDidMount() {
-        this.props.getUserProfileRepos(this.props.user.login, this.props.currentPage, this.props.perPage)
-    }*/
+    componentDidMount() {
+        debugger;
+        this.props.getUserProfileRepos(this.props.searchValue, this.props.selected.selected, this.props.perPage)
+    }
 
     onPageChanged = (pageNumber) => {
-        this.props.setCurrentPage(pageNumber.selected);
-        this.props.getUserProfileRepos(this.props.user.login, pageNumber.selected, this.props.perPage)
+        let incrementPageNumber = pageNumber.selected+1
+        if(typeof(incrementPageNumber) === "string"){
+            this.props.setCurrentPage(pageNumber.selected.selected);
+            this.props.getUserProfileRepos(this.props.user.login, pageNumber.selected.selected, this.props.perPage)
+        }else if(typeof(incrementPageNumber) === "number"){
+            this.props.setCurrentPage(pageNumber.selected);
+            this.props.getUserProfileRepos(this.props.user.login, incrementPageNumber, this.props.perPage)
+        }
+
     }
 
 /*
-   componentDidUpdate(prevProps, prevState, snapshot) {
-         let currentPage = this.props.currentPage
-         if(prevProps.currentPage !== prevState.currentPage){
-             this.setState({
-                 currentPage: this.props.currentPage
-             })
-         }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        this.props.setCurrentPage(1)
+        this.props.getUserProfileRepos(this.props.searchValue, this.props.currentPage, this.props.perPage)
     }
 */
 
@@ -48,13 +51,14 @@ class UsersContainer extends React.Component {
 const mapStateToProps = (state) => ({
     user: state.users.user,
     repos: state.repos.repos,
-    currentPage: state.repos.selected.selected,
+    selected: state.repos.selected,
     perPage: state.repos.perPage,
     totalReposCount: state.users.totalReposCount,
     isFetching: state.users.isFetching,
     firstListItem: state.repos.firstListItem,
     lastListItem: state.repos.lastListItem,
-    isEmptyUser: state.app.isEmptyUser
+    isEmptyUser: state.app.isEmptyUser,
+    searchValue: state.search.searchValue,
 })
 
 export default compose(

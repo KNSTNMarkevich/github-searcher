@@ -55,7 +55,7 @@
   }
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 395px){
   .headerWrapper{
     display: flex;
     justify-content: center;

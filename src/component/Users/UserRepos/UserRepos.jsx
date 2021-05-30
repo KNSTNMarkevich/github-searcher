@@ -10,6 +10,8 @@ function UserRepos(props) {
         return <EmptyRepositoryList />
     }
 
+    console.log(props.selected)
+
     return (
         <div>
             <div className={style.userReposContainer}>
@@ -29,14 +31,14 @@ function UserRepos(props) {
                     }
                     <div className={style.paginator}>
                         <div className={paginatorStyle.paginatorDescription}>
-                            {props.firstListItem} - {props.lastListItem} of {props.totalReposCount} items
+                            {(props.firstListItem)+4} - {(props.lastListItem)+4} of {props.totalReposCount} items
                         </div>
                         <ReactPaginate
                             pageCount={Math.ceil(props.totalReposCount / props.perPage)}
                             pageRangeDisplayed={2}
                             marginPagesDisplayed={1}
                             onPageChange={props.onPageChanged}
-                            initialPage={props.currentPage}
+                            initialPage={0}
                             containerClassName={paginatorStyle.paginatorContainer}
                             pageClassName={paginatorStyle.paginatorItem}
                             breakClassName={paginatorStyle.paginatorBreak}

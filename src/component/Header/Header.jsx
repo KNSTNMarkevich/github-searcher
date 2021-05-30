@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import style from './Header.module.css'
 import gitHub from '../../assets/icons/GitHubLogo.png'
+import { useHistory, withRouter, Link } from "react-router-dom";
+
 
 function Header(props) {
+    let history = useHistory();
 
     let [searchBar, setSearchBar] = useState('');
     const onSearchBarChange = (e) => {
@@ -12,9 +15,9 @@ function Header(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         props.isSearched(true)
+        history.push(`/users/${searchBar}`)
         props.SetSearchValue(searchBar)
-        props.getUserProfileInfo(searchBar, props.currentPage, props.perPage)
-
+        props.getUserProfileInfo(searchBar)
     }
 
 
