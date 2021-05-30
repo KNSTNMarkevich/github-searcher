@@ -61,7 +61,6 @@ export const getUserProfileInfo = (user) => async (dispatch) => {
         dispatch(setEmptyUser(false))
     }catch(e){
         dispatch(setEmptyUser(true))
-        alert('not found user')
     }
 }
 

@@ -6,22 +6,19 @@ import Users from "./Users";
 import {getUserProfileRepos, setCurrentPage} from "../../redux/repos-reducer";
 import Preloader from "../common/Preloader/Preloader";
 import {withRouter} from "react-router";
-import UserNotFound from "../common/UserNotFound/UserNotFound";
-import {setEmptyUser} from "../../redux/app-reducer";
+
 
 
 class UsersContainer extends React.Component {
-
-    componentDidMount() {
-        debugger;
-/*        let user = this.props.match.params.user
-        if (!this.props.user.login) {
-            this.props.getUserProfileInfo(user)
-        }*/
-        if(!this.props.isEmptyUser){
+        componentDidMount() {
+            debugger;
+                    let user = this.props.match.params.user
+                    if (!this.props.user.login) {
+                        this.props.getUserProfileInfo(user)
+                    }
             this.props.getUserProfileRepos(this.props.searchValue, this.props.selected.selected, this.props.perPage)
+
         }
-    }
 
     onPageChanged = (pageNumber) => {
         let incrementPageNumber = pageNumber.selected + 1
@@ -34,12 +31,16 @@ class UsersContainer extends React.Component {
         }
 
     }
-/*    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.user.login !== prevProps.user.login) {
-            this.props.getUserProfileRepos(this.props.searchValue, 0, this.props.perPage)
+
+
+
+        componentDidUpdate(prevProps, prevState, snapshot) {
+            if (this.props.user.login !== prevProps.user.login) {
+                this.props.getUserProfileRepos(this.props.searchValue, 0, this.props.perPage)
+            }
+
         }
 
-    }*/
 
 
     render() {
@@ -61,7 +62,7 @@ class UsersContainer extends React.Component {
 const mapStateToProps = (state) => ({
     user: state.users.user,
     repos: state.repos.repos,
-    selected: state.repos,
+    selected: state.repos.selected,
     perPage: state.repos.perPage,
     totalReposCount: state.users.totalReposCount,
     isFetching: state.users.isFetching,
@@ -72,7 +73,7 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps, {getUserProfileInfo, setCurrentPage, getUserProfileRepos, setIsFetching, setEmptyUser}),
+    connect(mapStateToProps, {getUserProfileInfo, setCurrentPage, getUserProfileRepos, setIsFetching}),
     withRouter
 )(UsersContainer)
 

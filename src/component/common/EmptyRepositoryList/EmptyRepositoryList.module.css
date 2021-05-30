@@ -1,9 +1,8 @@
 .emptyReposPageContainer{
     width: 877px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
 }
 
 .emptyReposPageContent{
@@ -23,4 +22,35 @@
     font-size: 22px;
     line-height: 140%;
     color: #808080;
+}
+
+
+@media screen and (max-width: 1279px){
+    .emptyReposPageContainer{
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .emptyReposPageContainer{
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .emptyReposPageContainer{
+        width: 400px;
+    }
+    .emptyReposPageIcon {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .emptyReposPageContainer{
+        width: 300px;
+    }
+    .emptyReposPageIcon {
+        margin-top: 100px;
+    }
 }

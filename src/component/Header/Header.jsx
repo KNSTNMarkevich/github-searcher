@@ -8,17 +8,20 @@ function Header(props) {
     let history = useHistory();
 
     let [searchBar, setSearchBar] = useState('');
+    let [username, setUsername] = useState('');
+
     const onSearchBarChange = (e) => {
         setSearchBar(e.currentTarget.value)
+        setUsername(e.currentTarget.value)
     }
 
     const handleSubmit = (event) => {
-        debugger
         event.preventDefault();
         props.isSearched(true)
-        history.push(`/users/${searchBar}`)
-        props.SetSearchValue(searchBar)
-        props.getUserProfileInfo(searchBar)
+        history.push(`/users/${username}`)
+        props.SetSearchValue(username)
+        props.getUserProfileInfo(username)
+        setSearchBar('')
     }
 
 
