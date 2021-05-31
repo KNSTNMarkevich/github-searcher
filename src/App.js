@@ -5,10 +5,7 @@ import store from "./redux/store"
 import HeaderContainer from "./component/Header/HeaderContainer";
 import React from "react";
 import UsersContainer from "./component/Users/UsersContainer";
-
-
 import Preloader from "./component/common/Preloader/Preloader";
-
 window.store = store;
 
 function App() {

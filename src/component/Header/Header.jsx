@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from './Header.module.css'
 import gitHub from '../../assets/icons/GitHubLogo.png'
-import { useHistory, withRouter, Link } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 
 
 function Header(props) {
