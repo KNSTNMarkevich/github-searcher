@@ -1,5 +1,4 @@
-
-export default function followersTransform (count) {
+function followersTransform (count) {
     if (count >= 1100 && count <=9999){
         return (count/1000).toFixed(2)
     }
@@ -10,3 +9,5 @@ export default function followersTransform (count) {
         return count
     }
 }
+
+export default followersTransform

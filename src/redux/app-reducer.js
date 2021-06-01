@@ -1,7 +1,6 @@
 const IS_EMPTY_USER = 'IS_EMPTY_USER'
 const IS_EMPTY_REPOS = 'IS_EMPTY_REPOS'
 
-
 let initialState = {
     isEmptyUser: false,
     isEmptyRepos: false

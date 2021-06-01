@@ -29,12 +29,16 @@
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.01em;
-  color: #808080;
+
 }
 
 .searchBar:focus {
   outline: none;
   box-shadow: 0 0 0 2pt #808080;
+}
+
+.searchBar::placeholder{
+  color: #808080;
 }
 
 

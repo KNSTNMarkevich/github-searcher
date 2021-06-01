@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {connect} from "react-redux";
 import {getUserProfileInfo, setIsFetching} from "../../redux/users-reducer";
 import {withRouter} from "react-router";
@@ -14,9 +14,16 @@ function UsersContainer(props) {
         if(!props.user.login){
             props.getUserProfileInfo(user)
         }
-        props.getUserProfileRepos(props.searchValue, 0, props.perPage)
+        props.getUserProfileRepos(user, 0, props.perPage)
     },[props.user.login]);
 
+    useEffect(() => {
+        let user = props.match.params.user
+        if(props.user.login != user){
+            props.getUserProfileInfo(user)
+            props.getUserProfileRepos(user, 0, props.perPage)
+        }
+    },[props.match.params.user]);
 
     const onPageChanged = (pageNumber) => {
         let incrementPageNumber = pageNumber.selected + 1
@@ -39,7 +46,6 @@ function UsersContainer(props) {
         </>
     )
 }
-
 
 const mapStateToProps = (state) => ({
     user: state.users.user,

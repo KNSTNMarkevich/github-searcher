@@ -1,4 +1,4 @@
-import {reposAPI, userAPI} from "../api/api";
+import {userAPI} from "../api/api";
 import {setEmptyRepos} from "./app-reducer";
 
 const SET_REPOS = 'SET_REPOS'
@@ -16,9 +16,6 @@ let initialState = {
     lastListItem: 4,
 };
 
-
-//
-
 const reposReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_REPOS: {
@@ -32,8 +29,8 @@ const reposReducer = (state = initialState, action) => {
                 ...state,
                 ...state.selected,
                 selected: action.currentPage,
-                firstListItem: action.currentPage*4-3,
-                lastListItem: action.currentPage*4
+                firstListItem: action.currentPage * 4 - 3,
+                lastListItem: action.currentPage * 4
             }
         }
         case SET_IS_FETCHING: {

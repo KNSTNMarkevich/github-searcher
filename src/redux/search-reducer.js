@@ -33,6 +33,4 @@ export const isSearched = (value) => {
 }
 
 
-
-
 export default searchReducer;

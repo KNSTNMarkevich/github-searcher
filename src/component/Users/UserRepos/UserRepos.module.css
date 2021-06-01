@@ -23,13 +23,6 @@
 
 }
 
-.paginator {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-}
-
 @media screen and (max-width: 1279px){
     .userReposContainer {
         max-width: 550px;

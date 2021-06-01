@@ -1,16 +1,14 @@
 import Repository from "./Repository/Repository";
-import ReactPaginate from 'react-paginate';
-import paginatorStyle from './ReactPaginate.module.css'
 import style from './UserRepos.module.css'
 import Preloader from "../../common/Preloader/Preloader";
 import EmptyRepositoryList from "../../common/EmptyRepositoryList/EmptyRepositoryList";
+import Paginator from "../../common/Paginator/Paginator";
 
 function UserRepos(props) {
+
     if (props.totalReposCount === 0) {
         return <EmptyRepositoryList/>
     }
-
-    console.log(props.selected)
 
     return (
         <div>
@@ -29,31 +27,7 @@ function UserRepos(props) {
                         :
                         <Preloader/>
                     }
-                    <div className={style.paginator}>
-                        <div className={paginatorStyle.paginatorDescription}>
-                            {(props.firstListItem) + 4} - {(props.lastListItem) + 4} of {props.totalReposCount} items
-                        </div>
-                        <ReactPaginate
-                            pageCount={Math.ceil(props.totalReposCount / props.perPage)}
-                            pageRangeDisplayed={2}
-                            marginPagesDisplayed={1}
-                            onPageChange={props.onPageChanged}
-                            initialPage={0}
-                            containerClassName={paginatorStyle.paginatorContainer}
-                            pageClassName={paginatorStyle.paginatorItem}
-                            breakClassName={paginatorStyle.paginatorBreak}
-                            previousClassName={paginatorStyle.paginatorPrevious}
-                            nextClassName={paginatorStyle.paginatorNext}
-                            activeClassName={paginatorStyle.paginatorItemActive}
-
-
-                            forcePage={null}
-                            previousLabel={'<'}
-                            nextLabel={'>'}
-                            breakLabel={'...'}
-                            breakClassName={paginatorStyle.break}
-                        />
-                    </div>
+                    <Paginator {...props}/>
                 </div>
             </div>
         </div>

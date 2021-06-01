@@ -1,3 +1,10 @@
+.paginator {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
 .paginatorContainer{
     display: flex;
     justify-content: center;
@@ -69,12 +76,44 @@
     .paginatorContainer{
         margin-left: 0;
     }
+
+    .paginator{
+        max-width: 550px;
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
+@media screen and (max-width: 1000px){
+
+    .paginator{
+        max-width: 450px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .paginator{
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+}
 
 @media screen and (max-width: 400px){
     .paginatorContainer{
         margin-left: 0;
+    }
+
+    .paginator{
+        max-width: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
     }
 }
 
