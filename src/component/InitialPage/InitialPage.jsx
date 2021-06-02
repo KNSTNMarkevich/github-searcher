@@ -1,13 +1,8 @@
 import React from 'react'
 import style from './InitialPage.module.css'
 import SearchLarge from "../../assets/icons/SearchLarge.png";
-import {compose} from "redux";
-import {connect} from "react-redux";
-import {getUserProfileInfo} from "../../redux/users-reducer";
-import {withRouter} from "react-router";
-import {isSearched} from "../../redux/search-reducer";
 
-const InitialPage = React.memo(function (props) {
+function InitialPage (props) {
 
     return (
         <div className={style.initialWrapper}>
@@ -21,17 +16,7 @@ const InitialPage = React.memo(function (props) {
         </div>
 
     );
-})
+}
 
-const mapStateToProps = (state) => ({
-    user: state.users.user,
-    searchValue: state.search.searchValue,
-    isSearchedState: state.search.isSearchedState
-})
+export default InitialPage;
 
-
-export default compose(
-    connect(mapStateToProps, {getUserProfileInfo, isSearched}),
-    withRouter,
-
-)(InitialPage)
