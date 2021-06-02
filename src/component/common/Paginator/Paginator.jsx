@@ -2,6 +2,7 @@ import ReactPaginate from 'react-paginate';
 import paginatorStyle from './ReactPaginate.module.css'
 
 function Paginator(props) {
+
     return (
         <div>
             <div className={paginatorStyle.paginator}>

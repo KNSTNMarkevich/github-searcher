@@ -5,7 +5,7 @@
     width: 877px;
     background: #FFFFFF;
     margin-bottom: 24px;
-    height: 112px;
+    min-height: 112px;
 }
 
 .repositoryName {
@@ -41,11 +41,23 @@
     .repositoryWrapper{
         max-width: 400px;
     }
+    .repositoryName {
+        font-size: 18px;
+    }
+    .repositoryDescription {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 400px){
     .repositoryWrapper{
         width: 300px;
+    }
+    .repositoryName {
+        font-size: 18px;
+    }
+    .repositoryDescription {
+        font-size: 14px;
     }
 }
 

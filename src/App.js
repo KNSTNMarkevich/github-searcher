@@ -13,7 +13,7 @@ function App() {
 
     return (
         <BrowserRouter>
-            <div className={style.appContainer}>
+            <div>
                 <div className={style.appWrapper}>
                     <HeaderContainer/>
                     <div className={style.appWrapperContent}>
@@ -22,9 +22,6 @@ function App() {
                                    render={() => <UsersContainer/>}/>
                             <Route exact path='/'
                                    render={() => <InitialPage/>}
-                            />
-                            <Route exact path='/preloader'
-                                   render={() => <Preloader/>}
                             />
                         </Switch>
                     </div>

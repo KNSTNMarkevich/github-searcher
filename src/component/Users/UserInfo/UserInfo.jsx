@@ -20,7 +20,7 @@ function UserInfo(props) {
                 <div className={style.userSubscribesInfo}>
                     <img className={style.followersIcon} src={followersIcon} alt=""/>
                     <div className={style.userFollowers}>
-                        {props.user.followers >= 1000 ? followersTransform(props.user.followers) + 'k' : props.user.followers} follower
+                        {props.user.followers >= 1000 ? followersTransform(props.user.followers) + 'k' : props.user.followers} followers
                     </div>
                     <img className={style.followingIcon} src={followingIcon} alt=""/>
                     <div className={style.userFollowers}>

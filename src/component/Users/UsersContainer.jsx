@@ -23,7 +23,7 @@ function UsersContainer(props) {
             props.getUserProfileInfo(user)
             props.getUserProfileRepos(user, 0, props.perPage)
         }
-    },[props.match.params.user]);
+    }, [props.match.params.user]);
 
     const onPageChanged = (pageNumber) => {
         let incrementPageNumber = pageNumber.selected + 1

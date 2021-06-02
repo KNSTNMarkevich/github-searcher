@@ -1,7 +1,6 @@
 import React from 'react'
 import style from './InitialPage.module.css'
 import SearchLarge from "../../assets/icons/SearchLarge.png";
-import {NavLink, Redirect} from "react-router-dom";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {getUserProfileInfo} from "../../redux/users-reducer";

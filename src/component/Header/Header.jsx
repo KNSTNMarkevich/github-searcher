@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from './Header.module.css'
 import gitHub from '../../assets/icons/GitHubLogo.png'
-import { useHistory} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 
 function Header(props) {
@@ -24,12 +24,10 @@ function Header(props) {
         setSearchBar('')
     }
 
-
-
     return (
         <div className={style.headerWrapper}>
             <div className={style.headerContent}>
-                <img className={style.headerLogo} src={gitHub}/>
+                <Link to={'/'}><img className={style.headerLogo} src={gitHub}/></Link>
                 <form onSubmit={handleSubmit}>
                     <input className={style.searchBar}
                            placeholder="Enter GitHub username"
